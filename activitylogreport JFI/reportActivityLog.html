@@ -1,0 +1,100 @@
+<div class="reportOptions container">
+    <div class="row">
+        <h4 class="text-center">Activity Log Report</h4>
+        <hr>
+        <label class="control-label col-xs-4">Project Types:</label>
+        <ul class="multi-select-box">
+            <li ng-repeat="projectType in reportCriteria.projectTypes" >
+                <input
+                        type="checkbox"
+                        ng-model="projectType.selected"
+                        ng-change="onProjectTypeChange()"
+                >
+                <span class="checkbox-inline no_indent">{{ projectType.name }} </span>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="row">
+        <!-- <label class="control-label col-xs-6">Select All:</label> -->
+        <!-- <input
+                class="toggle-checkbox"
+                type="checkbox"
+                id="checkbox-select-all-activities"
+                ng-click="toggleSelectAllActivities()"
+        > -->
+        <br>
+        <label class="control-label col-xs-4">Activity Log Types:</label>
+        <ul class="multi-select-box" style="width:450px;height:450px;">
+            <li ng-repeat="activity in reportCriteria.activityLogTypes" >
+                <input
+                        type="checkbox"
+                        ng-model="activity.selected"
+                >
+                <span class="checkbox-inline no_indent">{{ activity.name}}</span>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-3">
+          <label for="beginDate">Begin Date:</label>
+        </div>
+        <div class="col-sm-3">
+          <input
+                name="beginDate"
+                id="beginDate"
+                class="form-control report-date"
+                type="date"
+                ng-model="reportCriteria.beginDate"
+          >
+        </div>
+        <div class="col-sm-3">
+          <label for="beginDate">Begin Time:</label>
+        </div>
+        <div class="col-sm-3">
+          <input
+                name="beginDate"
+                id="beginDate"
+                class="form-control report-date"
+                type="time"
+                ng-model="reportCriteria.beginTime"
+          >
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+          <label for="beginDate">End Date:</label>
+        </div>
+        <div class="col-sm-3">
+          <input
+                name="beginDate"
+                id="beginDate"
+                class="form-control report-date"
+                type="date"
+                ng-model="reportCriteria.endDate"
+          >
+        </div>
+        <div class="col-sm-3">
+          <label for="beginDate">End Time:</label>
+        </div>
+        <div class="col-sm-3">
+          <input
+                name="beginDate"
+                id="beginDate"
+                class="form-control report-date"
+                type="time"
+                ng-model="reportCriteria.endTime"
+          >
+        </div>
+    </div>
+  
+
+    <div class="row">
+        <button ng-click="openPdf()">Open Pdf</button>
+        <!-- <button ng-click="downloadPdf()">Download Pdf</button> -->
+    </div>
+</div>
+<br>
+<br>
